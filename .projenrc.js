@@ -1,12 +1,17 @@
 const { JsiiProject } = require('projen');
 
 const project = new JsiiProject({
-  author: 'Roger Chi',
-  authorAddress: 'user@domain.com',
-  defaultReleaseBranch: 'main',
-  jsiiFqn: "projen.JsiiProject",
   name: 'remix-project',
-  repositoryUrl: 'https://github.com/user/remix-project.git',
+  author: 'Roger Chi',
+  authorAddress: 'roger@rogerchi.com',
+  defaultReleaseBranch: 'main',
+  jsiiFqn: 'projen.JsiiProject',
+  repositoryUrl: 'https://github.com/rogerchi/remix-project.git',
+  entrypoint: 'lib/index.js',
+  devDeps: ['@types/fs-extra@^8'], // This will break if it's on 9
+  deps: ['projen'],
+  bundledDeps: ['fs-extra'],
+  stability: 'experimental',
 
   /* JsiiProjectOptions */
   // compat: false,                                                            /* Automatically run API compatibility test against the latest version published to npm after compilation. */

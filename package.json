@@ -2,11 +2,9 @@
   "name": "remix-project",
   "repository": {
     "type": "git",
-    "url": "https://github.com/user/remix-project.git"
+    "url": "https://github.com/rogerchi/remix-project.git"
   },
   "scripts": {
-    "projen": "npx projen",
-    "start": "npx projen start",
     "clobber": "npx projen clobber",
     "compile": "npx projen compile",
     "test:compile": "npx projen test:compile",
@@ -21,14 +19,17 @@
     "package": "npx projen package",
     "eslint": "npx projen eslint",
     "compat": "npx projen compat",
-    "docgen": "npx projen docgen"
+    "docgen": "npx projen docgen",
+    "projen": "npx projen",
+    "start": "npx projen start"
   },
   "author": {
     "name": "Roger Chi",
-    "email": "user@domain.com",
+    "email": "roger@rogerchi.com",
     "organization": false
   },
   "devDependencies": {
+    "@types/fs-extra": "^8",
     "@types/jest": "^26.0.20",
     "@types/node": "^10.17.0",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
@@ -44,12 +45,18 @@
     "jsii-docgen": "^1.8.46",
     "jsii-pacmak": "^1.21.0",
     "json-schema": "^0.3.0",
-    "projen": "^0.16.7",
-    "standard-version": "^9.0.0",
+    "projen": "^0.17.17",
+    "standard-version": "^9",
     "ts-jest": "^26.5.1",
     "typescript": "^3.9.5"
   },
-  "bundledDependencies": [],
+  "dependencies": {
+    "fs-extra": "^9.1.0",
+    "projen": "^0.17.17"
+  },
+  "bundledDependencies": [
+    "fs-extra"
+  ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "version": "0.0.0",
@@ -93,7 +100,7 @@
     }
   },
   "types": "lib/index.d.ts",
-  "stability": "stable",
+  "stability": "experimental",
   "jsii": {
     "outdir": "dist",
     "targets": {},
